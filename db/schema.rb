@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161216230246) do
+ActiveRecord::Schema.define(version: 20161216231356) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "message"
@@ -23,8 +23,10 @@ ActiveRecord::Schema.define(version: 20161216230246) do
     t.string   "date"
     t.text     "memory"
     t.string   "url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "message__id"
+    t.index ["message__id"], name: "index_pictures_on_message__id"
   end
 
 end
